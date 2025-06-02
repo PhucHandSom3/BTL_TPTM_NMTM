@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Dữ liệu cảm biến - Đại Nam</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fffdf5;
+      padding: 50px;
+      text-align: center;
+    }
+
+    h2 {
+      color: #c0392b;
+    }
+
+    table {
+      margin: auto;
+      border-collapse: collapse;
+      width: 80%;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 12px;
+      font-size: 15px;
+    }
+
+    th {
+      background-color: #ff6600;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background-color: #fdf2dc;
+    }
+
+    tr:hover {
+      background-color: #ffe0b3;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>📊 Lịch sử đo pH và Độ đục</h2>
+
+  {% if data_rows %}
+    <table>
+      <tr>
+        <th>Thời gian</th>
+        <th>pH</th>
+        <th>Độ đục</th>
+      </tr>
+      {% for row in data_rows %}
+        <tr>
+          <td>{{ row.timestamp }}</td>
+          <td>{{ row.ph }}</td>
+          <td>{{ row.turb }}</td>
+        </tr>
+      {% endfor %}
+    </table>
+  {% else %}
+    <p>⚠️ Chưa có dữ liệu nào được ghi nhận.</p>
+  {% endif %}
+
+</body>
+</html>

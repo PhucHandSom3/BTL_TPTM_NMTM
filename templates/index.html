@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Hệ thống giám sát Đại Nam</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(to bottom right, #fefae0, #fdf6e3);
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      padding: 15px 30px;
+      background: #ffffff;
+      border-bottom: 3px solid #ff6600;
+    }
+
+    .header img {
+      height: 60px;
+    }
+
+    .slogan {
+      margin-left: 20px;
+      font-size: 22px;
+      color: #0070c0;
+      font-weight: 700;
+    }
+
+    .navbar {
+      display: flex;
+      background-color: #ff6600;
+      justify-content: center;
+      padding: 10px 0;
+      gap: 20px;
+    }
+
+    .navbar a {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 20px;
+      font-weight: 700;
+      transition: background 0.3s, transform 0.2s;
+      border-radius: 5px;
+    }
+
+    .navbar a:hover {
+      background-color: #e65300;
+      transform: scale(1.05);
+    }
+
+    .content {
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .card {
+      background: #ffffff;
+      border: 2px solid #ff6600;
+      border-radius: 15px;
+      display: inline-block;
+      padding: 40px 60px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+    }
+
+    .value {
+      font-size: 48px;
+      color: #0070c0;
+      font-weight: 700;
+    }
+
+    .label {
+      font-size: 20px;
+      color: #444;
+      margin-bottom: 25px;
+    }
+
+    .timestamp {
+      color: #666;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+
+    .btn-send {
+      margin-top: 30px;
+      padding: 12px 30px;
+      background-color: #ff6600;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s;
+    }
+
+    .btn-send:hover {
+      background-color: #e65300;
+      transform: scale(1.05);
+    }
+
+    footer {
+      text-align: center;
+      font-size: 13px;
+      padding: 20px;
+      color: #777;
+      background-color: #f1f1f1;
+      border-top: 1px solid #e0e0e0;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <img src="{{ url_for('static', filename='logo.png') }}" alt="Đại Nam Logo">
+    <div class="slogan">Đại học Đại Nam - Học để thay đổi</div>
+  </div>
+
+  <div class="navbar">
+    <a href="{{ url_for('index') }}">TRANG CHỦ</a>
+    <a href="{{ url_for('data_page') }}">DỮ LIỆU</a>
+    <a href="{{ url_for('report') }}">BÁO CÁO</a>
+    <a href="{{ url_for('contact') }}">LIÊN HỆ</a>
+  </div>
+
+  <div class="content">
+    <div class="card">
+      <div class="value">{{ data.ph }}</div>
+      <div class="label">pH Nước</div>
+      <div class="value">{{ data.turb }}</div>
+      <div class="label">Độ Đục</div>
+      <div class="timestamp">Cập nhật lúc: {{ data.timestamp }}</div>
+    </div>
+
+    <form action="/send-email" method="POST">
+      <button type="submit" class="btn-send">Gửi Báo Cáo Qua Email</button>
+    </form>
+  </div>
+
+  <footer>
+    © Hệ thống giám sát Đại Nam 2025 | Thiết kế bởi ChatGPT
+  </footer>
+
+</body>
+</html>
