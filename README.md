@@ -9,7 +9,7 @@
 </h2>
 
 <p align="center">
-    <img src="dnu_logo.png" alt="DaiNam University Logo" width="200"/><br>
+    <img src="fitdnu_logo.png" alt="DaiNam University Logo" width="200"/><br>
 </p>
 
 <p align="center">
