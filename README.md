@@ -13,10 +13,17 @@
 </p>
 
 <p align="center">
-    [![AIoTLab](https://img.shields.io/badge/AIoTLab-green?style=for-the-badge)](https://www.facebook.com/DNUAIoTLab)
-    [![Khoa CNTT](https://img.shields.io/badge/Khoa%20Công%20nghệ%20Thông%20tin-blue?style=for-the-badge)](https://dainam.edu.vn/vi/khoa-cong-nghe-thong-tin)
-    [![Đại học Đại Nam](https://img.shields.io/badge/Đại%20học%20Đại%20Nam-orange?style=for-the-badge)](https://dainam.edu.vn)
+  <a href="https://www.facebook.com/DNUAIoTLab">
+    <img src="https://img.shields.io/badge/AIoTLab-green?style=for-the-badge" alt="AIoTLab" />
+  </a>
+  <a href="https://dainam.edu.vn/vi/khoa-cong-nghe-thong-tin">
+    <img src="https://img.shields.io/badge/Khoa%20Công%20nghệ%20Thông%20tin-blue?style=for-the-badge" alt="Khoa CNTT" />
+  </a>
+  <a href="https://dainam.edu.vn">
+    <img src="https://img.shields.io/badge/Đại%20học%20Đại%20Nam-orange?style=for-the-badge" alt="Đại học Đại Nam" />
+  </a>
 </p>
+
 
 ---
 
@@ -36,4 +43,5 @@ Dự án này nằm trong học phần **Nông nghiệp thông minh** theo đị
 - **Lưu trữ dữ liệu:** Tự động lưu lại dữ liệu theo thời gian thực để thống kê.
 
 ### 🖼️ Ảnh giao diện
-> `anh.jpg`
+![Giao diện trang web](anh.jpg)
+
